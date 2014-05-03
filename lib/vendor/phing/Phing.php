@@ -1100,7 +1100,6 @@ class Phing {
         set_time_limit(0);
         ini_set('short_open_tag', 'off');
         ini_set('default_charset', 'iso-8859-1');
-        ini_set('register_globals', 'off');
         ini_set('allow_call_time_pass_reference', 'on');
         
         // should return memory limit in MB  

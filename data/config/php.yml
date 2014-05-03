@@ -4,5 +4,4 @@ set:
     &amp;
 
 warn:
-  register_globals:            off
   session.auto_start:          off
