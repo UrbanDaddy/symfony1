@@ -1,5 +1,4 @@
 set:
-  magic_quotes_runtime:        off
   log_errors:                  on
   arg_separator.output:        |
     &amp;
