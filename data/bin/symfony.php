@@ -13,9 +13,6 @@ if (!isset($sf_symfony_lib_dir))
   die("You must launch symfony command line with the symfony script\n");
 }
 
-// set magic_quotes_runtime to off
-ini_set('magic_quotes_runtime', 'Off');
-
 // force populating $argc and $argv in the case PHP does not automatically create them (fixes #2943)
 $argv = $_SERVER['argv'];
 $argc = $_SERVER['argc'];
