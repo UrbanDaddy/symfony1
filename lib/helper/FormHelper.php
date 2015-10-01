@@ -441,6 +441,9 @@ function textarea_tag($name, $content = null, $options = array())
       case 'fck':
         $rich = 'FCK';
         break;
+      case 'redactor':
+        $rich = 'Redactor';
+        break;
     }
 
     $editorClass = 'sfRichTextEditor'.$rich;
