@@ -388,7 +388,7 @@ class BasePeer
 
 				$sql = "UPDATE " . $tableName . " SET ";
 				foreach($updateTablesColumns[$tableName] as $col) {
-					$sql .= substr($col, strpos($col, '.') + 1) . " = ?,";
+					$sql .= "`" . substr($col, strpos($col, '.') + 1) . "` = ?,";
 				}
 
 				$sql = substr($sql, 0, -1) . " WHERE " . $sqlSnippet;
