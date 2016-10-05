@@ -407,29 +407,20 @@ class sfWebRequest extends sfRequest
   public function getUriPrefix()
   {
     $pathArray = $this->getPathInfoArray();
-    if ($this->isSecure())
-    {
-      $standardPort = '443';
-      $protocol = 'https';
-    }
-    else
-    {
-      $standardPort = '80';
-      $protocol = 'http';
-    }
-
     $host = explode(":", $this->getHost());
+    $protocol = $this->isSecure() ? 'https' : 'http';
+
     if (count($host) == 1)
     {
       $host[] = isset($pathArray['SERVER_PORT']) ? $pathArray['SERVER_PORT'] : '';
     }
 
-    if ($host[1] == $standardPort || empty($host[1]))
+    if (($this->isSecure() && $host[1] == '443') || $host[1] == '80' || empty($host[1]))
     {
       unset($host[1]);
     }
 
-    return $protocol.'://'.implode(':', $host);;
+    return $protocol.'://'.implode(':', $host);
   }
 
   /**
